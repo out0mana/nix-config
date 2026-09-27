@@ -20,7 +20,7 @@
           inherit inputs;
           user = {
             name = "p001";
-            uid = 1001;
+            uid = 1000;
           };
         };
         modules = [ ./minibee/configuration.nix ];
