@@ -5,11 +5,8 @@
     [
       ./hardware-configuration.nix
       ./services.nix
-      ../shared/nixvim.nix
       ../shared/git-personal.nix
-      ../shared/tmux.nix
-      ../shared/nrs.nix
-      ../shared/pi-sandboxed.nix
+      ../shared/home.nix
     ];
 
   # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
@@ -61,4 +58,3 @@
   system.stateVersion = "26.05"; # Dont change
 
 }
-

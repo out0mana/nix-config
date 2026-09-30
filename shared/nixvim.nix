@@ -1,11 +1,11 @@
-{ pkgs, lib, inputs, ... }: {
-  imports = [
-    inputs.nixvim.nixosModules.default
-  ];
+{ inputs, ... }:
+
+{
+  imports = [ inputs.nixvim.homeModules.default ];
 
   programs.nixvim = {
     enable = true;
-    colorschemes.catppuccin.enable = true;    
+    colorschemes.catppuccin.enable = true;
     globals.mapleader = " ";
 
     opts = {
@@ -30,8 +30,8 @@
       # folding.enable = true;
     };
     plugins.cmp.enable = true;
-    plugins.neogit.enable = true; 
-    
+    plugins.neogit.enable = true;
+
     keymaps = [
       {
         action = "<cmd>Pick files<CR>";
