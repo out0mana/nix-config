@@ -1,11 +1,14 @@
 { pkgs, user, ... }:
 
-let
-  homeDir = builtins.getEnv "HOME";
-in {
-  environment.systemPackages = [
+{
+  home.packages = [
     (pkgs.writeShellScriptBin "nrs" ''
-      exec nixos-rebuild switch --flake /home/${user.name}/nix-config#
+      ${
+        if pkgs.stdenv.hostPlatform.isDarwin then
+          ''exec home-manager switch --flake /Users/${user.name}/repos/nix-config --impure''
+        else
+          ''exec nixos-rebuild switch --flake /home/${user.name}/nix-config#''
+      }
     '')
   ];
 }

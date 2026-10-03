@@ -8,3 +8,7 @@
 - Generate `hardware-configuration.nix` using `nixos-generate-config --root ~`
 - Copy hardware config to host folder `cp hardware-configuration.nix ~/nix-config/<host>/`
 - Install with `nixos-install --flake ~/nix-config/flake.nix#<host>`
+
+## macOS
+- From the repository root, initially activate with `nix run .#home-manager -- "$(id -un)"`
+- Then you can reactivate with `nrs`
