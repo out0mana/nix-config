@@ -5,7 +5,7 @@
 }:
 
 let
-  pi = lib.getExe pkgs.pi-coding-agent;
+  pi = lib.getExe (pkgs.callPackage ./pi-latest.nix { });
 
   piSandboxed =
     if pkgs.stdenv.hostPlatform.isDarwin then

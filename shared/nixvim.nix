@@ -17,6 +17,10 @@
       expandtab = true;
       tabstop = 2;
       shiftwidth = 0;
+      wrap = true;
+      linebreak = true;
+      breakindent = true;
+      whichwrap = "b,s,<,>,[,],h,l";
     };
 
     plugins.lz-n.enable = true;
