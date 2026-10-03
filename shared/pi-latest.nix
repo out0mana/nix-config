@@ -6,6 +6,7 @@
   autoPatchelfHook,
   ripgrep,
   fd,
+  libxcb
 }:
 
 let
@@ -41,7 +42,7 @@ stdenv.mkDerivation {
   sourceRoot = "pi";
 
   nativeBuildInputs = [ makeBinaryWrapper ] ++ lib.optionals stdenv.hostPlatform.isLinux [ autoPatchelfHook ];
-  buildInputs = lib.optionals stdenv.hostPlatform.isLinux [ stdenv.cc.cc.lib ];
+  buildInputs = lib.optionals stdenv.hostPlatform.isLinux [ stdenv.cc.cc.lib libxcb ];
 
   installPhase = ''
     runHook preInstall
