@@ -5,16 +5,6 @@
   };
   outputs = inputs@{ nix-darwin, nixpkgs, ... }: {
     nixosConfigurations = {
-      orangepi = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          user = {
-            name = "p001";
-            uid = 1001;
-          };
-        };
-        modules = [ ./orangepi/configuration.nix ];
-      };
       minibee = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
