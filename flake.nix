@@ -29,24 +29,13 @@
         };
 
       nixosConfigurations = {
-        orangepi = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs;
-            isNixOS = true;
-            user = {
-              name = "p001";
-              uid = 1001;
-            };
-          };
-          modules = [ ./orangepi/configuration.nix ];
-        };
         minibee = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs;
             isNixOS = true;
             user = {
               name = "p001";
-              uid = 1001;
+              uid = 1000;
             };
           };
           modules = [ ./minibee/configuration.nix ];

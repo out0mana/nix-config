@@ -9,11 +9,8 @@
       ../shared/home.nix
     ];
 
-  # Use the extlinux boot loader. (NixOS wants to enable GRUB by default)
-  boot.loader.grub.enable = false;
-  # Enables the generation of /boot/extlinux/extlinux.conf
-  boot.loader.generic-extlinux-compatible.enable = true;
-
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
   networking.hostName = "minibee"; # Define your hostname.
 
   # Configure network connections interactively with nmcli or nmtui.
