@@ -5,6 +5,7 @@
     [
       ./hardware-configuration.nix
       ./services.nix
+      ./services/homer.nix
       ../shared/git-personal.nix
       ../shared/home.nix
     ];
