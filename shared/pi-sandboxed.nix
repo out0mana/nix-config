@@ -25,7 +25,8 @@ let
               (allow file-write*
                 (subpath (param "WORK_DIR"))
                 (subpath (param "PI_DIR"))
-                (subpath (param "TMP_DIR")))
+                (subpath (param "TMP_DIR"))
+                (subpath "/private/tmp"))
               (allow file-write* (literal "/dev/null"))
             ' \
             "${pi}" "$@"
