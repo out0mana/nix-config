@@ -6,6 +6,7 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin.url = "github:catppuccin/nix/release-26.05";
   };
 
   outputs =
@@ -25,7 +26,7 @@
             isNixOS = false;
             user.name = macUser;
           };
-          modules = [ ./shared/home.nix ];
+          modules = [ ./mac/configuration.nix ];
         };
 
       nixosConfigurations = {
