@@ -20,6 +20,11 @@
               url = "javascript:void(window.open(`//\${location.hostname}:8096`))";
             }
             {
+              name = "Jellyfin (nixarr)";
+              subtitle = "Media Server";
+              url = "javascript:void(window.open(`//\${location.hostname}:8097`))";
+            }
+            {
               name = "Navidrome";
               subtitle = "Music Server";
               url = "javascript:void(window.open(`//\${location.hostname}:4533`))";
