@@ -13,11 +13,11 @@ let
         name = "pi";
         text = ''
           mkdir -p "$HOME/.pi"
+          export TMPDIR=/tmp/
 
           exec /usr/bin/sandbox-exec \
             -D "WORK_DIR=$PWD" \
             -D "PI_DIR=$HOME/.pi" \
-            -D "TMP_DIR=''${TMPDIR:-/tmp}" \
             -p '
               (version 1)
               (allow default)
@@ -25,7 +25,6 @@ let
               (allow file-write*
                 (subpath (param "WORK_DIR"))
                 (subpath (param "PI_DIR"))
-                (subpath (param "TMP_DIR"))
                 (subpath "/private/tmp"))
               (allow file-write* (literal "/dev/null"))
             ' \
